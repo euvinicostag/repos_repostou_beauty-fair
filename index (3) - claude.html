@@ -1,0 +1,797 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Repostou, Ganhou! — Repós Cosméticos na Beauty Show 2026</title>
+  <meta name="description" content="Participe da promoção Repostou, Ganhou! da Repós Cosméticos na Beauty Show 2026 e concorra a uma mala recheada de produtos." />
+
+  <!-- CSS Global (menu + rodapé) -->
+  <link rel="stylesheet" href="global - claude.css" />
+
+  <style>
+    /* ══════════════════════════════════════════
+       CSS ESPECÍFICO DESTA LANDING PAGE
+       ══════════════════════════════════════════ */
+
+    /* ─── HERO / BANNER ─── */
+    .hero {
+      background: #f0f4ea; /* fallback enquanto imagem não carrega */
+      min-height: 420px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .hero img {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 24px;
+      object-fit: cover;
+    }
+
+    .hero-img-placeholder {
+      width: 100%;
+      min-height: 420px;
+      background: linear-gradient(135deg, #e8f0e0 0%, #d4e8c2 100%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      color: #6ab04c;
+      font-family: 'Montserrat', sans-serif;
+    }
+
+    .hero-img-placeholder p {
+      font-size: 0.85rem;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      text-align: center;
+    }
+
+    /* ─── SEÇÃO: GANHE UM BRINDE ─── */
+    .sec-brinde {
+      padding: 60px 20px;
+      background: var(--branco);
+    }
+
+    .sec-brinde .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+      align-items: center;
+    }
+
+    /* Coluna esquerda — texto principal */
+    .brinde-titulo {
+      font-family: var(--fonte-titulo);
+      font-weight: 900;
+      line-height: 1.1;
+      text-transform: uppercase;
+    }
+
+    .brinde-titulo .ganhe {
+      font-size: clamp(2rem, 5vw, 3.2rem);
+      color: var(--cinza-escuro);
+      display: block;
+    }
+
+    .brinde-titulo .brinde {
+      font-size: clamp(2.8rem, 7vw, 4.5rem);
+      color: var(--verde);
+      display: block;
+    }
+
+    .brinde-subtitulo {
+      font-family: var(--fonte-titulo);
+      font-size: clamp(0.75rem, 2vw, 0.95rem);
+      font-weight: 600;
+      color: var(--cinza-medio);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-top: 8px;
+      line-height: 1.5;
+    }
+
+    .brinde-subtitulo strong {
+      color: var(--cinza-escuro);
+    }
+
+    /* Coluna direita — ícones + texto */
+    .brinde-direita {}
+
+    /* Linha de ícones (câmera → instagram → brinde) */
+    .icones-fluxo {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 20px;
+      flex-wrap: wrap;
+    }
+
+    .icone-item {
+      width: 52px;
+      height: 52px;
+      background: var(--cinza-claro);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+    }
+
+    .icone-seta {
+      font-size: 1.2rem;
+      color: var(--verde);
+      font-weight: 700;
+    }
+
+    .brinde-desc {
+      font-size: 0.95rem;
+      color: var(--cinza-medio);
+      line-height: 1.8;
+    }
+
+    .brinde-desc strong {
+      color: var(--cinza-escuro);
+      font-weight: 700;
+    }
+
+    /* ─── DIVISOR ─── */
+    .divisor {
+      border: none;
+      border-top: 1px solid #e0e0e0;
+      margin: 0;
+    }
+
+    /* ─── SEÇÃO: PARTICIPE ─── */
+    .sec-participe {
+      padding: 60px 20px;
+      background: var(--branco);
+    }
+
+    .sec-participe .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1.6fr;
+      gap: 48px;
+      align-items: start;
+    }
+
+    /* Coluna esquerda */
+    .participe-esq h2 {
+      font-family: var(--fonte-titulo);
+      font-weight: 900;
+      font-size: clamp(1.8rem, 4vw, 2.8rem);
+      color: var(--cinza-escuro);
+      margin-bottom: 24px;
+    }
+
+    .btn-verde {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--verde);
+      color: var(--branco);
+      font-family: var(--fonte-titulo);
+      font-weight: 700;
+      font-size: 0.82rem;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      padding: 14px 22px;
+      border-radius: 6px;
+      transition: background 0.2s, transform 0.15s;
+    }
+
+    .btn-verde:hover {
+      background: var(--verde-escuro);
+      transform: translateY(-1px);
+    }
+
+    .btn-verde .btn-icone {
+      width: 22px;
+      height: 22px;
+      background: rgba(255,255,255,0.25);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.7rem;
+    }
+
+    /* Coluna direita — instruções */
+    .participe-dir p.intro {
+      font-size: 0.95rem;
+      color: var(--cinza-escuro);
+      font-weight: 600;
+      margin-bottom: 16px;
+    }
+
+    .lista-seta {
+      list-style: none;
+      margin-bottom: 20px;
+    }
+
+    .lista-seta li {
+      padding: 6px 0 6px 20px;
+      position: relative;
+      font-size: 0.9rem;
+      color: var(--cinza-medio);
+      line-height: 1.5;
+    }
+
+    .lista-seta li::before {
+      content: '→';
+      position: absolute;
+      left: 0;
+      color: var(--verde);
+      font-weight: 700;
+    }
+
+    .participe-dir p.conclusao {
+      font-size: 0.9rem;
+      color: var(--cinza-escuro);
+      margin-top: 8px;
+    }
+
+    .participe-dir p.conclusao strong {
+      font-weight: 700;
+    }
+
+    /* Player de vídeo placeholder */
+    .video-placeholder {
+      margin-top: 24px;
+      background: #1a1a1a;
+      border-radius: 8px;
+      aspect-ratio: 16/9;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      cursor: pointer;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .video-placeholder .play-btn {
+      width: 56px;
+      height: 56px;
+      background: rgba(255,255,255,0.15);
+      border: 2px solid rgba(255,255,255,0.5);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.4rem;
+      color: var(--branco);
+      transition: background 0.2s;
+    }
+
+    .video-placeholder:hover .play-btn {
+      background: rgba(106,176,76,0.5);
+      border-color: var(--verde);
+    }
+
+    .video-placeholder p {
+      color: rgba(255,255,255,0.5);
+      font-size: 0.75rem;
+      text-align: center;
+    }
+
+    /* Barra verde embaixo do vídeo */
+    .video-barra {
+      height: 4px;
+      background: var(--verde);
+      border-radius: 0 0 8px 8px;
+    }
+
+    /* ─── SEÇÃO: REGRAS ─── */
+    .sec-regras {
+      padding: 60px 20px;
+      background: var(--branco);
+    }
+
+    .sec-regras .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1.6fr;
+      gap: 48px;
+      align-items: start;
+    }
+
+    .sec-regras h2 {
+      font-family: var(--fonte-titulo);
+      font-weight: 900;
+      font-size: clamp(1.8rem, 4vw, 2.8rem);
+      color: var(--cinza-escuro);
+    }
+
+    .regras-dir .lista-seta {
+      margin-bottom: 16px;
+    }
+
+    .regras-dir p {
+      font-size: 0.88rem;
+      color: var(--cinza-medio);
+      margin-top: 12px;
+      font-style: italic;
+    }
+
+    /* ─── SEÇÃO: REGULAMENTO COMPLETO ─── */
+    .sec-regulamento {
+      padding: 60px 20px;
+      background: var(--branco);
+    }
+
+    .sec-regulamento .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1.6fr;
+      gap: 48px;
+      align-items: center;
+    }
+
+    .sec-regulamento h2 {
+      font-family: var(--fonte-titulo);
+      font-weight: 900;
+      font-size: clamp(1.8rem, 4vw, 2.8rem);
+      color: var(--cinza-escuro);
+      line-height: 1.15;
+    }
+
+    .regulamento-dir p {
+      font-size: 0.9rem;
+      color: var(--cinza-medio);
+      margin-bottom: 20px;
+      line-height: 1.7;
+    }
+
+    .regulamento-dir .contato-box {
+      margin-top: 28px;
+      padding-top: 24px;
+      border-top: 1px solid #e0e0e0;
+    }
+
+    .regulamento-dir .contato-box p {
+      margin-bottom: 6px;
+    }
+
+    .regulamento-dir .contato-box a {
+      color: var(--verde);
+      font-weight: 600;
+    }
+
+    /* ─── GALERIA DE FOTOS ─── */
+    .sec-galeria {
+      width: 100%;
+      padding: 60px 20px;
+      margin: 0 auto;
+      max-width: 1440px;
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 24px;
+      align-items: stretch;
+    }
+
+    .galeria-item {
+      width: 100%;
+      aspect-ratio: 2 / 3;
+      overflow: hidden;
+      border-radius: 24px;
+      background: #f6f6f6;
+    }
+
+    .sec-galeria img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .galeria-item:nth-child(2) {
+      background: linear-gradient(135deg, #c8ddb5, #9ac87a);
+    }
+
+    .galeria-item:nth-child(3) {
+      background: linear-gradient(135deg, #bdd4a8, #8bbe65);
+    }
+
+
+    /* ════════════════════════════════
+       RESPONSIVO — LANDING PAGE
+       ════════════════════════════════ */
+    @media (max-width: 768px) {
+      /* Hero menor no mobile */
+      .hero-img-placeholder {
+        min-height: 260px;
+      }
+
+      /* Brinde: empilha */
+      .sec-brinde .container {
+        grid-template-columns: 1fr;
+        gap: 28px;
+        text-align: center;
+      }
+
+      .icones-fluxo {
+        justify-content: center;
+      }
+
+      /* Participe: empilha */
+      .sec-participe .container {
+        grid-template-columns: 1fr;
+        gap: 28px;
+      }
+
+      .participe-esq {
+        text-align: center;
+      }
+
+      .participe-esq .btn-verde {
+        width: 100%;
+        justify-content: center;
+      }
+
+      /* Regras: empilha */
+      .sec-regras .container {
+        grid-template-columns: 1fr;
+        gap: 24px;
+      }
+
+      /* Regulamento: empilha */
+      .sec-regulamento .container {
+        grid-template-columns: 1fr;
+        gap: 24px;
+      }
+
+      /* Galeria: linha contínua com rolagem horizontal */
+      .sec-galeria {
+        display: flex;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        padding-bottom: 12px;
+        margin: 0 -20px;
+        gap: 16px;
+      }
+
+      .galeria-item {
+        flex: 0 0 180px;
+        width: 180px;
+        max-width: 180px;
+        min-width: 180px;
+        max-height: none;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .sec-brinde,
+      .sec-participe,
+      .sec-regras,
+      .sec-regulamento,
+      .sec-galeria {
+        padding: 44px 16px;
+      }
+
+      .sec-galeria {
+        display: flex;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        padding-bottom: 12px;
+        margin: 0 -16px;
+        gap: 14px;
+      }
+
+      .galeria-item {
+        flex: 0 0 150px;
+        width: 150px;
+        max-width: 150px;
+        min-width: 150px;
+        max-height: none;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ══════════════════════════════════════════
+       MENU — (definido em global.css)
+       ══════════════════════════════════════════ -->
+  <nav class="site-nav" id="site-nav">
+    <div class="nav-container">
+
+      <!-- Logo -->
+      <a href="https://reposcosmeticos.com.br/" class="nav-logo">
+      <img src="assets/logo repós_cinza.svg" alt="Repós Cosméticos" />
+      </a>
+
+      <!-- Hamburguer (mobile) -->
+      <button class="nav-toggle" id="nav-toggle" aria-label="Abrir menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <!-- Links -->
+      <ul class="nav-links" id="nav-links">
+        <li><a href="https://reposcosmeticos.com.br/" class="ativo">Início</a></li>
+        <li><a href="https://reposcosmeticos.com.br/Sobre-Nos">Quem Somos</a></li>
+        <li><a href="https://reposcosmeticos.com.br/Conheca-nossos-produtos">Produtos</a></li>
+        <li><a href="https://reposcosmeticos.com.br/contato">Contato</a></li>
+      </ul>
+
+    </div>
+  </nav>
+
+
+  <!-- ══════════════════════════════════════════
+       HERO / BANNER PRINCIPAL
+       ══════════════════════════════════════════ -->
+  <section class="hero">
+    <img src="assets\header-landing-respostou.webp" alt="Repostou, Ganhou! — Repós Cosméticos na Beauty Show 2026" />
+  </section>
+
+
+  <!-- ══════════════════════════════════════════
+       GANHE UM BRINDE
+       ══════════════════════════════════════════ -->
+  <section class="sec-brinde">
+    <div class="container">
+
+      <!-- Esquerda: título -->
+      <div class="brinde-esq">
+        <p class="brinde-titulo">
+          <span class="ganhe">Ganhe um</span>
+          <span class="brinde">brinde</span>
+        </p>
+        <p class="brinde-subtitulo">
+          Na hora + concorra<br>
+          a <strong>uma mala recheada</strong><br>
+          de produtos<br>
+          Repós Cosméticos!
+        </p>
+      </div>
+
+      <!-- Direita: fluxo de ícones + descrição -->
+      <div class="brinde-direita">
+        <div class="icones-fluxo">
+          <div class="icone-item" title="Grave um vídeo">🎬</div>
+          <span class="icone-seta">→</span>
+          <div class="icone-item" title="Poste no Instagram">📱</div>
+          <span class="icone-seta">→</span>
+          <div class="icone-item" title="Ganhe um brinde">🎁</div>
+        </div>
+        <p class="brinde-desc">
+          Grave um vídeo cantando ou dançando nossa música, poste no seu feed,
+          use a hashtag <strong>#REPOStei</strong> e siga a Repós no Instagram ou no TikTok.<br><br>
+          Depois, é só passar em nosso stand e resgatar o seu brinde!
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+  <hr class="divisor" />
+
+
+  <!-- ══════════════════════════════════════════
+       PARTICIPE
+       ══════════════════════════════════════════ -->
+  <section class="sec-participe" id="participe">
+    <div class="container">
+
+      <!-- Esquerda -->
+      <div class="participe-esq">
+        <h2>Participe</h2>
+        <a href="#" class="btn-verde">
+          Encontre a música e a coreografia em nossos perfis
+          <span class="btn-icone">↗</span>
+        </a>
+      </div>
+
+      <!-- Direita -->
+      <div class="participe-dir">
+        <p class="intro">Se você estiver na Beauty Show 2026, pode ganhar brindes incríveis da Repós Cosméticos!</p>
+
+        <ul class="lista-seta">
+          <li>Confira as regras abaixo</li>
+          <li>Grave um vídeo cantando ou dançando nossa música<br><em style="font-size:0.82rem; color:#999;">(o vídeo a seguir é uma inspiração! Seja criativa na dancinha)</em></li>
+          <li>Poste no seu feed usando a hashtag <strong>#REPOStei</strong></li>
+          <li>Siga a Repós no Instagram e/ou no TikTok</li>
+          <li>Manter o perfil aberto (público) durante o período do evento</li>
+        </ul>
+
+        <p class="conclusao">Depois, <strong>é só passar em nosso stand e resgatar o seu brinde!</strong></p>
+
+        <!-- Vídeo placeholder -->
+        <div class="video-placeholder" role="button" aria-label="Assistir vídeo de inspiração">
+          <div class="play-btn">▶</div>
+          <p>Vídeo de inspiração<br><em>Substituir por: embed do vídeo oficial da campanha</em></p>
+        </div>
+        <div class="video-barra"></div>
+      </div>
+
+    </div>
+  </section>
+
+  <hr class="divisor" />
+
+
+  <!-- ══════════════════════════════════════════
+       REGRAS
+       ══════════════════════════════════════════ -->
+  <section class="sec-regras" id="regras">
+    <div class="container">
+
+      <h2>Regras</h2>
+
+      <div class="regras-dir">
+        <p style="font-size:0.9rem; color:var(--cinza-escuro); margin-bottom:14px;">
+          Para a sua participação ser válida, seu vídeo deve seguir as orientações abaixo:
+        </p>
+
+        <ul class="lista-seta">
+          <li>O vídeo deve apresentar uma ou mais pessoas cantando ou dançando a música oficial da campanha;</li>
+          <li>Ser publicado no feed do Instagram em formato Reels, e permanecer publicado, visível e com o seu perfil em modo público até o fim da apuração;</li>
+          <li>Usar a hashtag <strong>#repostei</strong> na legenda;</li>
+          <li>Seguir os perfis oficiais da Repós no Instagram e/ou TikTok;</li>
+          <li>Ter imagem nítida, boa iluminação e áudio compreensível <em>(dica: limpe a lente da câmera do seu celular)</em>;</li>
+          <li>Ser gravado em ambiente visualmente limpo;</li>
+          <li>Não conter outras marcas em destaque.</li>
+        </ul>
+
+        <p>Para mais informações, confira o regulamento completo a seguir.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <hr class="divisor" />
+
+
+  <!-- ══════════════════════════════════════════
+       REGULAMENTO COMPLETO
+       ══════════════════════════════════════════ -->
+  <section class="sec-regulamento" id="regulamento">
+    <div class="container">
+
+      <h2>Regulamento<br>Completo</h2>
+
+      <div class="regulamento-dir">
+        <p>Clique no botão abaixo e confira o regulamento completo da promoção "Repostou, Ganhou!"</p>
+
+        <a href="#" class="btn-verde">
+          Regulamento completo
+          <span class="btn-icone">↗</span>
+        </a>
+
+        <!-- Contato / Dúvidas -->
+        <div class="contato-box">
+          <p>Dúvidas, reclamações ou sugestões? Contate uma de nossas atendentes no stand da feira, ou fale com o nosso SAC:</p>
+          <p>E-mail: <a href="mailto:sac@reposcosmeticos.com.br">sac@reposcosmeticos.com.br</a></p>
+          <p>WhatsApp: <a href="https://wa.me/5551997230513">(51) 99723-0513</a></p>
+          <p>Telefone fixo: <a href="tel:+555135932480">(51) 3593-2480</a></p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ══════════════════════════════════════════
+       GALERIA DE FOTOS (3 imagens)
+       ══════════════════════════════════════════ -->
+  <div class="sec-galeria" aria-label="Galeria de produtos Repós">
+    <div class="galeria-item">
+      <img src="assets\nova foto promocional linha norte.webp" alt="Esmaltes Linha Norte">
+    </div>
+    <div class="galeria-item">
+      <img src="assets\Meu Pomar.webp" alt="Linha Meu Pomar">
+    </div>
+    <div class="galeria-item">
+      <img src="assets\Redutor de Medidas.webp" alt="Linha de Massagem">
+    </div>
+  </div>
+
+
+  <!-- ══════════════════════════════════════════
+       RODAPÉ — (definido em global.css)
+       ══════════════════════════════════════════ -->
+  <footer class="site-footer">
+    <div class="footer-container">
+
+      <div class="footer-grid">
+
+        <!-- Coluna 1: Marca -->
+        <div class="footer-col footer-brand">
+          <img src="assets\logo repós_cinza.svg" alt="Repós Cosméticos" style="height:80px; margin-bottom:4px;" />
+          <p class="slogan">A marca queridinha do Brasil!</p>
+          <div class="footer-social">
+            <a href="https://www.instagram.com/reposcosmeticosoficial" title="Instagram"><img src="assets\ig.svg"></a>
+            <a href="https://www.tiktok.com/@reposcosmeticos" title="TikTok"><img src="assets\ttk.svg"></a>
+            <a href="https://www.youtube.com/@ReposCosmeticos" title="YouTube"><img src="assets\yt.svg"></a>
+          </div>
+        </div>
+
+        <!-- Coluna 2: Navegação -->
+        <div class="footer-col">
+          <ul>
+            <li><a href="https://reposcosmeticos.com.br/">Início</a></li>
+            <li><a href="https://reposcosmeticos.com.br/Sobre-Nos">Sobre nós</a></li>
+            <li><a href="https://reposcosmeticos.com.br/Conheca-nossos-produtos">Nossos produtos</a></li>
+            <li><a href="https://reposcosmeticos.com.br/contato">Contato</a></li>
+          </ul>
+        </div>
+
+        <!-- Coluna 3: Atendimento -->
+        <div class="footer-col">
+          <h4>Atendimento</h4>
+          <ul>
+            <li><a href="https://wa.me/5551998109144">Atendimento Lojistas</a></li>
+            <li><a href="https://forms.gle/RsEqaRWvct9JYiVw8">Parcerias com Influencers</a></li>
+            <li><a href="https://wa.me/5551997230513">SAC</a></li>
+          </ul>
+        </div>
+
+        <!-- Coluna 4: Canais -->
+        <div class="footer-col">
+          <h4>SAC</h4>
+          <p>
+            <a href="mailto:sac@reposcosmeticos.com.br">sac@reposcosmeticos.com.br</a><br>
+            WhatsApp: <a href="https://wa.me/5551997230513">(51) 99723-0513</a><br>
+            Telefone fixo: <a href="tel:+555135932480">(51) 3593-2480</a>
+          </p>
+        </div>
+
+      </div>
+
+      <!-- Linha inferior -->
+      <div class="footer-bottom">
+        <p>2026 © Repós Cosméticos — Todos os direitos reservados.</p>
+        <a>Desenvolvido por Studio Criação</a>
+      </div>
+
+    </div>
+  </footer>
+
+
+  <!-- ══════════════════════════════════════════
+       JAVASCRIPT — Menu hamburguer + scroll suave
+       ══════════════════════════════════════════ -->
+  <script>
+    // Menu hamburguer
+    const navToggle = document.getElementById('nav-toggle');
+    const siteNav   = document.getElementById('site-nav');
+
+    navToggle.addEventListener('click', () => {
+      siteNav.classList.toggle('aberto');
+      const expandido = siteNav.classList.contains('aberto');
+      navToggle.setAttribute('aria-expanded', expandido);
+    });
+
+    // Fecha o menu ao clicar em um link (mobile)
+    document.querySelectorAll('.nav-links a').forEach(link => {
+      link.addEventListener('click', () => {
+        siteNav.classList.remove('aberto');
+      });
+    });
+
+    // Fecha o menu ao clicar fora
+    document.addEventListener('click', (e) => {
+      if (!siteNav.contains(e.target)) {
+        siteNav.classList.remove('aberto');
+      }
+    });
+  </script>
+
+</body>
+</html>

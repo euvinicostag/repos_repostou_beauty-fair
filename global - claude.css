@@ -1,0 +1,372 @@
+/* =============================================
+   REPÓS COSMÉTICOS — CSS GLOBAL
+   Menu + Rodapé reutilizáveis em todas as páginas
+   ============================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+
+/* ─── RESET & BASE ─── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --verde:       #6ab04c;
+  --verde-escuro:#4e8a37;
+  --cinza-escuro:#2d2d2d;
+  --cinza-nav:   #3a3a3a;
+  --cinza-medio: #666;
+  --cinza-claro: #f5f5f5;
+  --branco:      #ffffff;
+  --fonte-titulo: 'Inter', sans-serif;
+  --fonte-corpo:  'Inter', sans-serif;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 80px;
+  font-family: var(--fonte-corpo);
+  color: var(--cinza-escuro);
+  background: var(--branco);
+  line-height: 1.6;
+  min-height: 100vh;
+}
+
+img { max-width: 100%; display: block; }
+
+a { text-decoration: none; color: inherit; }
+
+/* ══════════════════════════════════════════
+   MENU / NAVEGAÇÃO GLOBAL
+   ══════════════════════════════════════════ */
+.site-nav {
+  background: #e3e3e3;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  width: 100%;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+.nav-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 64px;
+}
+
+/* Logo */
+.nav-logo img {
+  height: 40px;
+  width: 40px;
+}
+
+/* Placeholder do logo quando não há imagem */
+.nav-logo .logo-placeholder {
+  height: 40px;
+  display: flex;
+  align-items: center;
+  font-family: var(--fonte-titulo);
+  font-weight: 900;
+  font-size: 1.3rem;
+  color: var(--branco);
+  letter-spacing: -0.5px;
+}
+
+.nav-logo .logo-placeholder span {
+  color: var(--verde);
+}
+
+/* Links do menu */
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 32px;
+}
+
+.nav-links a {
+  color: var(--cinza-escuro);
+  font-family: var(--fonte-titulo);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  padding: 4px 0;
+  border-bottom: 2px solid transparent;
+  transition: color 0.2s, border-color 0.2s;
+}
+
+.nav-links a:hover,
+.nav-links a.ativo {
+  color: var(--verde);
+  border-bottom-color: var(--verde);
+}
+
+/* Hamburguer (mobile) */
+.nav-toggle {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+}
+
+.nav-toggle span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: var(--cinza-escuro);
+  border-radius: 2px;
+  transition: transform 0.3s, opacity 0.3s;
+}
+
+/* Menu aberto (mobile) */
+.site-nav.aberto .nav-links {
+  display: flex;
+}
+
+.site-nav.aberto .nav-toggle span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+.site-nav.aberto .nav-toggle span:nth-child(2) {
+  opacity: 0;
+}
+.site-nav.aberto .nav-toggle span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+/* ══════════════════════════════════════════
+   RODAPÉ GLOBAL
+   ══════════════════════════════════════════ */
+.site-footer {
+  background: var(--branco);
+  color: var(--cinza-escuro);
+  padding: 48px 20px 24px;
+  font-family: var(--fonte-corpo);
+  margin-top: 24px;
+  margin-bottom: 28px;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Grid de colunas */
+.footer-grid {
+  display: grid;
+  grid-template-columns: 2.4fr 1fr 1fr 1fr;
+  gap: 32px;
+  margin-bottom: 40px;
+}
+
+.footer-col h4 {
+  font-family: var(--fonte-titulo);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--verde);
+  margin-bottom: 14px;
+}
+
+.footer-col ul {
+  list-style: none;
+}
+
+.footer-col ul li {
+  margin-bottom: 8px;
+}
+
+.footer-col ul li a {
+  color: var(--cinza-escuro);
+  font-size: 0.85rem;
+  transition: color 0.2s;
+}
+
+.footer-col ul li a:hover {
+  color: var(--verde);
+}
+
+.footer-col p {
+  color: var(--cinza-escuro);
+  font-size: 0.85rem;
+  line-height: 1.7;
+}
+
+.footer-col p a {
+  color: var(--cinza-escuro);
+  transition: color 0.2s;
+}
+
+.footer-col p a:hover {
+  color: var(--verde);
+}
+
+/* Logo e slogan no rodapé */
+.footer-brand .logo-placeholder {
+  font-family: var(--fonte-titulo);
+  font-weight: 900;
+  font-size: 1.4rem;
+  color: var(--cinza-escuro);
+  margin-bottom: 6px;
+}
+
+.footer-brand .logo-placeholder span {
+  color: var(--verde);
+}
+
+.footer-brand .slogan {
+  font-size: 0.78rem;
+  color: var(--cinza-escuro);
+  margin-top: 16px;
+}
+
+/* Redes sociais */
+.footer-social {
+  width: 60x;
+  display: flex;
+  gap: 12px;
+  margin-top: 24px;
+}
+
+.footer-social a {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s, border-color 0.2s;
+}
+
+.footer-social a:hover {
+  background: rgba(106,176,76,0.12);
+  border-color: var(--verde);
+}
+
+/* Linha divisória */
+.footer-bottom {
+  border-top: 1px solid rgba(0,0,0,0.08);
+  padding-top: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.footer-bottom p {
+  font-size: 0.75rem;
+  color: var(--cinza-escuro);
+}
+
+.footer-bottom a {
+  font-size: 0.75rem;
+  color: var(--cinza-escuro);
+  transition: color 0.2s;
+}
+
+.footer-bottom a:hover {
+  color: var(--verde);
+}
+
+/* ══════════════════════════════════════════
+   RESPONSIVO — MENU E RODAPÉ
+   ══════════════════════════════════════════ */
+@media (max-width: 840px) {
+  body {
+    padding: 0 12px;
+  }
+
+  /* Menu hamburguer */
+  .nav-toggle {
+    display: flex;
+  }
+
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 64px;
+    left: 0;
+    right: 0;
+    background: #e3e3e3;
+    flex-direction: column;
+    gap: 0;
+    padding: 8px 0 16px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+  }
+
+  .nav-links li a {
+    display: block;
+    padding: 12px 24px;
+    border-bottom: none;
+    font-size: 0.85rem;
+  }
+
+  /* Rodapé compacto em duas colunas por linha */
+  .footer-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 60px 16px;
+  }
+
+  .footer-col {
+    font-size: 0.8rem;
+  }
+
+  .footer-social {
+    margin-top: 16px;
+    gap: 8px;
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    padding: 0 12px;
+  }
+
+  .footer-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 50px 48px;
+  }
+
+  .footer-brand img {
+    width: 120px;
+    height: auto;
+  }
+
+  .footer-brand .slogan {
+    font-size: 0.65rem;
+  }
+
+  .footer-col h4 {
+    font-size: 0.8rem;
+  }
+
+  .footer-col p, .footer-col ul li a {
+    font-size: 0.65rem;
+  }
+
+  .footer-social a {
+    width: 26px;
+    height: 26px;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .footer-bottom p, .footer-bottom a {
+    font-size: 0.6rem;
+  }
+}
