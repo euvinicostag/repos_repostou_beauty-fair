@@ -16,13 +16,12 @@
 
     /* ─── HERO / BANNER ─── */
     .hero {
-      min-height: 420px;
       display: flex;
       align-items: center;
       justify-content: center;
       overflow: hidden;
       position: relative;
-      padding-top: 30px;
+      padding-top: 28px;
       padding-bottom: 20px;
     }
 
@@ -108,10 +107,9 @@
     }
 
     .icone-item img {
-      width: 32px;
-      height: 32px;
+      width: 36px;
+      height: 36px;
       object-fit: contain;
-    }
     }
 
     .icone-seta {
@@ -172,16 +170,13 @@
       font-family: var(--fonte-titulo);
       font-weight: 700;
       font-size: 0.82rem;
-      letter-spacing: 0.5px;
-      text-transform: uppercase;
       padding: 14px 22px;
-      border-radius: 6px;
+      border-radius: 8px;
       transition: background 0.2s, transform 0.15s;
     }
 
     .btn-verde:hover {
       background: var(--verde-escuro);
-      transform: translateY(-1px);
     }
 
     .btn-verde .btn-icone {
@@ -193,6 +188,10 @@
       align-items: center;
       justify-content: center;
       font-size: 0.7rem;
+    }
+
+    .mobile-only {
+      display: none;
     }
 
     /* Coluna direita — instruções */
@@ -213,7 +212,7 @@
       position: relative;
       font-size: 0.9rem;
       color: var(--cinza-medio);
-      line-height: 1.5;
+      line-height: 1.4;
     }
 
     .lista-seta li::before {
@@ -275,6 +274,26 @@
       text-align: center;
     }
 
+    .video-embed {
+      width: 100%;
+      max-width: 960px;
+      margin-top: 24px;
+    }
+
+    .video-embed iframe {
+      width: 100%;
+      height: 220px;
+      min-height: 220px;
+      border-radius: 16px;
+      border: 0;
+    }
+
+    @media (min-width: 840px) {
+      .video-embed iframe {
+        height: 360px;
+      }
+    }
+
     /* Barra verde embaixo do vídeo */
     .video-barra {
       height: 4px;
@@ -285,7 +304,7 @@
     /* ─── SEÇÃO: REGRAS ─── */
     .sec-regras {
       padding: 60px 20px;
-      background: var(--branco);
+  
     }
 
     .sec-regras .container {
@@ -394,13 +413,12 @@
     @media (max-width: 768px) {
       /* Hero: reduz paddings */
       .hero {
-        padding-top: 16px;
+        padding-top: 28px;
         padding-bottom: 16px;
       }
 
-      /* Hero menor no mobile */
-      .hero-img-placeholder {
-        min-height: 260px;
+      .hero img {
+        border-radius: 16px;
       }
 
       /* Brinde: empilha */
@@ -424,7 +442,8 @@
         text-align: center;
       }
 
-      .participe-esq .btn-verde {
+      .participe-esq .btn-verde,
+      .sec-regras .btn-verde {
         width: 100%;
         justify-content: center;
       }
@@ -460,8 +479,8 @@
     @media (max-width: 480px) {
       /* Hero: espaçamento mínimo */
       .hero {
-        padding-top: 12px;
-        padding-bottom: 12px;
+        padding-top: 28px;
+        padding-bottom: 16px;
       }
 
       .sec-brinde,
@@ -562,7 +581,7 @@
         <p class="brinde-desc">
           Grave um vídeo cantando ou dançando nossa música, poste no seu feed,
           use a hashtag <strong>#REPOStei</strong> e siga a Repós no Instagram ou no TikTok.<br><br>
-          <strong>Depois, é só passar em nosso stand e resgatar o seu brinde!</strong>
+          Depois, se você estiver na feira, é só passar no nosso stand e resgatar seu brinde!<br><br><strong>E se não estiver, ainda pode participar e concorrer à mala recheada de produtos da Repós!</strong>
         </p>
       </div>
 
@@ -581,32 +600,32 @@
       <!-- Esquerda -->
       <div class="participe-esq">
         <h2>Participe</h2>
-        <a href="#" class="btn-verde">
-          Encontre a música e a coreografia em nossos perfis
-          <span class="btn-icone">↗</span>
+        <a href="https://linktr.ee/reposcosmeticosoficial" class="btn-verde">
+          Encontre a música e a coreografia<br/>em nossos perfis
         </a>
       </div>
 
       <!-- Direita -->
       <div class="participe-dir">
-        <p class="intro">Se você estiver na Beauty Show 2026, pode ganhar brindes incríveis da Repós Cosméticos!</p>
+        <p class="intro">Você pode ganhar brindes incríveis e concorrer à mala recheada de produtos da Repós Cosméticos!*</p>
 
         <ul class="lista-seta">
           <li>Confira as regras abaixo</li>
-          <li>Grave um vídeo cantando ou dançando nossa música<br><em style="font-size:0.82rem; color:#999;">(o vídeo a seguir é uma inspiração! Seja criativa na dancinha)</em></li>
+          <li>Grave um vídeo cantando ou dançando nossa música</li>
           <li>Poste no seu feed usando a hashtag <strong>#REPOStei</strong></li>
           <li>Siga a Repós no Instagram e/ou no TikTok</li>
           <li>Manter o perfil aberto (público) durante o período do evento</li>
         </ul>
 
-        <p class="conclusao">Depois, <strong>é só passar em nosso stand e resgatar o seu brinde!</strong></p>
-
-        <!-- Vídeo placeholder -->
-        <div class="video-placeholder" role="button" aria-label="Assistir vídeo de inspiração">
-          <div class="play-btn">▶</div>
-          <p>Vídeo de inspiração<br><em>Substituir por: embed do vídeo oficial da campanha</em></p>
+        <p class="conclusao">*Se você <strong>estiver na feira,</strong> é só passar em nosso stand e resgatar o seu brinde.<br>E se você <strong>NÃO estiver na feira,</strong> ainda pode participar da ação e concorrer às malas!</p><br>
+        
+        <br>
+        <p class="intro">Confira abaixo uma <strong>SUGESTÃO</strong> de coreografia para o seu vídeo. Seja criativa, queridinha!</p>
+        
+        <!-- Vídeo da coreo -->
+        <div class="video-embed">
+          <iframe class="video-embed__iframe" width="100%" height="220" src="https://www.youtube.com/embed/lAbROEVxhZc?si=iVXbt01r_pBQ84ml" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
         </div>
-        <div class="video-barra"></div>
       </div>
 
     </div>
@@ -638,6 +657,10 @@
           <li>Não conter outras marcas em destaque.</li>
         </ul>
 
+        <a href="https://linktr.ee/reposcosmeticosoficial" class="btn-verde">
+          Encontre a música e a coreografia em nossos perfis
+        </a>
+        <br><br>
         <p>Para mais informações, confira o regulamento completo a seguir.</p>
       </div>
 
@@ -658,10 +681,9 @@
       <div class="regulamento-dir">
         <p>Clique no botão abaixo e confira o regulamento completo da promoção "Repostou, Ganhou!"</p>
 
-        <a href="#" class="btn-verde">
+        <a href="https://www.google.com/" class="btn-verde">
           Regulamento completo
-          <span class="btn-icone">↗</span>
-        </a>
+        </a><br><br>
 
         <!-- Contato / Dúvidas -->
         <div class="contato-box">

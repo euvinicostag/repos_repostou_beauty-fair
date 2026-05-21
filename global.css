@@ -198,19 +198,6 @@ a { text-decoration: none; color: inherit; }
   color: var(--verde);
 }
 
-/* Logo e slogan no rodapé */
-.footer-brand .logo-placeholder {
-  font-family: var(--fonte-titulo);
-  font-weight: 900;
-  font-size: 1.4rem;
-  color: var(--cinza-escuro);
-  margin-bottom: 6px;
-}
-
-.footer-brand .logo-placeholder span {
-  color: var(--verde);
-}
-
 .footer-brand .slogan {
   font-size: 0.78rem;
   color: var(--cinza-escuro);
@@ -286,14 +273,17 @@ a { text-decoration: none; color: inherit; }
     right: 0;
     background: #e3e3e3;
     flex-direction: column;
+    align-items: flex-end;
     gap: 0;
     padding: 8px 0 16px;
     box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+    border-radius: 0 0 16px 16px;
   }
 
   .nav-links li a {
     display: block;
-    padding: 12px 24px;
+    padding: 12px 24px 12px 0;
+    text-align: right;
     border-bottom: none;
     font-size: 0.85rem;
   }
