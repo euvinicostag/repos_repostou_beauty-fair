@@ -13,8 +13,8 @@
 }
 
 :root {
-  --verde:       #6ab04c;
-  --verde-escuro:#4e8a37;
+  --verde:       #95C11F;
+  --verde-escuro:#009900;
   --cinza-escuro:#2d2d2d;
   --cinza-nav:   #3a3a3a;
   --cinza-medio: #666;
@@ -47,42 +47,27 @@ a { text-decoration: none; color: inherit; }
 .site-nav {
   background: #e3e3e3;
   position: sticky;
-  top: 0;
+  top: 12px;
+  border-radius: 24px;
   z-index: 1000;
   width: 100%;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.192);
 }
 
 .nav-container {
-  max-width: 1200px;
+  max-width: 1440px;
+  width: 100%;
   margin: 0 auto;
   padding: 0 20px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 64px;
+  height: 68px;
 }
 
 /* Logo */
 .nav-logo img {
   height: 40px;
-  width: 40px;
-}
-
-/* Placeholder do logo quando não há imagem */
-.nav-logo .logo-placeholder {
-  height: 40px;
-  display: flex;
-  align-items: center;
-  font-family: var(--fonte-titulo);
-  font-weight: 900;
-  font-size: 1.3rem;
-  color: var(--branco);
-  letter-spacing: -0.5px;
-}
-
-.nav-logo .logo-placeholder span {
-  color: var(--verde);
 }
 
 /* Links do menu */
@@ -126,7 +111,7 @@ a { text-decoration: none; color: inherit; }
   width: 24px;
   height: 2px;
   background: var(--cinza-escuro);
-  border-radius: 2px;
+  border-radius: 4px;
   transition: transform 0.3s, opacity 0.3s;
 }
 

@@ -16,13 +16,14 @@
 
     /* ─── HERO / BANNER ─── */
     .hero {
-      background: #f0f4ea; /* fallback enquanto imagem não carrega */
       min-height: 420px;
       display: flex;
       align-items: center;
       justify-content: center;
       overflow: hidden;
       position: relative;
+      padding-top: 30px;
+      padding-bottom: 20px;
     }
 
     .hero img {
@@ -31,26 +32,6 @@
       display: block;
       border-radius: 24px;
       object-fit: cover;
-    }
-
-    .hero-img-placeholder {
-      width: 100%;
-      min-height: 420px;
-      background: linear-gradient(135deg, #e8f0e0 0%, #d4e8c2 100%);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      gap: 12px;
-      color: #6ab04c;
-      font-family: 'Montserrat', sans-serif;
-    }
-
-    .hero-img-placeholder p {
-      font-size: 0.85rem;
-      font-weight: 600;
-      letter-spacing: 0.5px;
-      text-align: center;
     }
 
     /* ─── SEÇÃO: GANHE UM BRINDE ─── */
@@ -123,13 +104,21 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 1.5rem;
+      overflow: hidden;
+    }
+
+    .icone-item img {
+      width: 32px;
+      height: 32px;
+      object-fit: contain;
+    }
     }
 
     .icone-seta {
+      font-family: var(--fonte-titulo);
       font-size: 1.2rem;
       color: var(--verde);
-      font-weight: 700;
+      font-weight: 900;
     }
 
     .brinde-desc {
@@ -232,7 +221,7 @@
       position: absolute;
       left: 0;
       color: var(--verde);
-      font-weight: 700;
+      font-weight: 900;
     }
 
     .participe-dir p.conclusao {
@@ -242,7 +231,7 @@
     }
 
     .participe-dir p.conclusao strong {
-      font-weight: 700;
+      font-weight: 900;
     }
 
     /* Player de vídeo placeholder */
@@ -398,19 +387,17 @@
       display: block;
     }
 
-    .galeria-item:nth-child(2) {
-      background: linear-gradient(135deg, #c8ddb5, #9ac87a);
-    }
-
-    .galeria-item:nth-child(3) {
-      background: linear-gradient(135deg, #bdd4a8, #8bbe65);
-    }
-
 
     /* ════════════════════════════════
        RESPONSIVO — LANDING PAGE
        ════════════════════════════════ */
     @media (max-width: 768px) {
+      /* Hero: reduz paddings */
+      .hero {
+        padding-top: 16px;
+        padding-bottom: 16px;
+      }
+
       /* Hero menor no mobile */
       .hero-img-placeholder {
         min-height: 260px;
@@ -454,49 +441,51 @@
         gap: 24px;
       }
 
-      /* Galeria: linha contínua com rolagem horizontal */
       .sec-galeria {
-        display: flex;
-        flex-wrap: nowrap;
-        overflow-x: auto;
-        padding-bottom: 12px;
-        margin: 0 -20px;
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
         gap: 16px;
+        overflow-x: visible;
+        padding-bottom: 0;
+        margin: 0 auto;
       }
 
       .galeria-item {
-        flex: 0 0 180px;
-        width: 180px;
-        max-width: 180px;
-        min-width: 180px;
-        max-height: none;
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
       }
     }
 
     @media (max-width: 480px) {
+      /* Hero: espaçamento mínimo */
+      .hero {
+        padding-top: 12px;
+        padding-bottom: 12px;
+      }
+
       .sec-brinde,
       .sec-participe,
       .sec-regras,
       .sec-regulamento,
       .sec-galeria {
-        padding: 44px 16px;
+        padding: 32px 16px;
       }
 
       .sec-galeria {
-        display: flex;
-        flex-wrap: nowrap;
-        overflow-x: auto;
-        padding-bottom: 12px;
-        margin: 0 -16px;
-        gap: 14px;
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 10px;
+        overflow-x: visible;
+        padding-bottom: 0;
+        margin: 0 auto;
       }
 
       .galeria-item {
-        flex: 0 0 150px;
-        width: 150px;
-        max-width: 150px;
-        min-width: 150px;
-        max-height: none;
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+        border-radius: 16px;
       }
     }
   </style>
@@ -556,7 +545,7 @@
         <p class="brinde-subtitulo">
           Na hora + concorra<br>
           a <strong>uma mala recheada</strong><br>
-          de produtos<br>
+          de produtos da<br>
           Repós Cosméticos!
         </p>
       </div>
@@ -564,16 +553,16 @@
       <!-- Direita: fluxo de ícones + descrição -->
       <div class="brinde-direita">
         <div class="icones-fluxo">
-          <div class="icone-item" title="Grave um vídeo">🎬</div>
+          <div class="icone-item" title="Grave um vídeo"><img src="assets/icons\icon-1.svg" alt="Grave um vídeo"></div>
           <span class="icone-seta">→</span>
-          <div class="icone-item" title="Poste no Instagram">📱</div>
+          <div class="icone-item" title="Poste no Instagram"><img src="assets/icons\icon-2.svg" alt="Poste no Instagram"></div>
           <span class="icone-seta">→</span>
-          <div class="icone-item" title="Ganhe um brinde">🎁</div>
+          <div class="icone-item" title="Ganhe um brinde"><img src="assets/icons\icon-3.svg" alt="Ganhe um brinde"></div>
         </div>
         <p class="brinde-desc">
           Grave um vídeo cantando ou dançando nossa música, poste no seu feed,
           use a hashtag <strong>#REPOStei</strong> e siga a Repós no Instagram ou no TikTok.<br><br>
-          Depois, é só passar em nosso stand e resgatar o seu brinde!
+          <strong>Depois, é só passar em nosso stand e resgatar o seu brinde!</strong>
         </p>
       </div>
 
@@ -716,9 +705,9 @@
           <img src="assets\logo repós_cinza.svg" alt="Repós Cosméticos" style="height:80px; margin-bottom:4px;" />
           <p class="slogan">A marca queridinha do Brasil!</p>
           <div class="footer-social">
-            <a href="https://www.instagram.com/reposcosmeticosoficial" title="Instagram"><img src="assets\ig.svg"></a>
-            <a href="https://www.tiktok.com/@reposcosmeticos" title="TikTok"><img src="assets\ttk.svg"></a>
-            <a href="https://www.youtube.com/@ReposCosmeticos" title="YouTube"><img src="assets\yt.svg"></a>
+            <a href="https://www.instagram.com/reposcosmeticosoficial" title="Instagram"><img src="assets\icons\ig.svg"></a>
+            <a href="https://www.tiktok.com/@reposcosmeticos" title="TikTok"><img src="assets\icons\ttk.svg"></a>
+            <a href="https://www.youtube.com/@ReposCosmeticos" title="YouTube"><img src="assets\icons\yt.svg"></a>
           </div>
         </div>
 
@@ -748,7 +737,7 @@
           <p>
             <a href="mailto:sac@reposcosmeticos.com.br">sac@reposcosmeticos.com.br</a><br>
             WhatsApp: <a href="https://wa.me/5551997230513">(51) 99723-0513</a><br>
-            Telefone fixo: <a href="tel:+555135932480">(51) 3593-2480</a>
+            Tel. fixo: <a href="tel:+555135932480">(51) 3593-2480</a>
           </p>
         </div>
 
